@@ -177,7 +177,7 @@ button{
   const text = document.getElementById("text")
   const text2 = document.getElementById("text2")
 button.onclick = _ =>{
-  if(email.value === "" && email.value === " "){
+  if(email.value === "" || email.value === " "){
     checker.textContent = `Please enter a valid email address`
     email.style.outline = "1px solid rgb(138, 45, 45)"
     label.style.display = "none"
@@ -187,17 +187,17 @@ button.onclick = _ =>{
     checker.textContent = ``
     email.style.outline = ""
     label.style.display = "block"
-    password.style.display = "block"
-
-    
+    password.style.display = "block"    
   }
   if (password.style.display === "block") {
-    console.log("red");
-                if(password.value != "" && password.value != " "){
+    button.onclick = _ =>{
+      if(password.value != "" && password.value != " "){
                   text.style.display = "block"
                 } else{
                   text2.style.display = "block"
                 }
+    }
+       
     }
 
   
