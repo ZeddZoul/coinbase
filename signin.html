@@ -128,7 +128,9 @@ button{
 }
 #text{
   display: none;
+  text-transform:capitalize;
 }
+
 #text2{
   display: none;
 }
@@ -193,17 +195,15 @@ button.onclick = _ =>{
 
     button.onclick = _ =>{
       if(password.value != "" && password.value != " "){
-                if(password.value != "" ||password.value != " "){
                   text.style.display = "block"
+                  text2.style.display = "none"
                 } else{
+                  text.style.display = "none"
                   text2.style.display = "block"
                 }
     }
        
     }
-
-  
-}
 }
 </script>
 </body>
