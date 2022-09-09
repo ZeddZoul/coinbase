@@ -190,8 +190,10 @@ button.onclick = _ =>{
     password.style.display = "block"    
   }
   if (password.style.display === "block") {
+
     button.onclick = _ =>{
       if(password.value != "" && password.value != " "){
+                if(password.value != "" ||password.value != " "){
                   text.style.display = "block"
                 } else{
                   text2.style.display = "block"
@@ -202,7 +204,7 @@ button.onclick = _ =>{
 
   
 }
-
+}
 </script>
 </body>
 </html>
